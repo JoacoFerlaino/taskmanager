@@ -1,0 +1,147 @@
+/*Creamos variables de colores para usar en todo el docu*/
+:root {
+    --primary: #6bef1e;
+    --secondary: rgb(241, 155, 115);
+    --light: rgb(42, 54, 188);
+    --dark: rgb(4, 4, 4);
+    --diabled: #e0eadf;
+}
+/*Al body le ponemos la fuente.
+margen 0 
+altura del 100 del viewport 
+y color de fondo var(--diabled)*/
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background-color: var(--diabled);
+}
+/*Ponemos que todo el documento tenga la primer letra mayusc*/
+*:first-letter {
+    text-transform: capitalize;
+}
+
+/*Establecemos un borde a todos los de esta clase*/
+.roundBorder {
+    border-radius: 8px;
+}
+
+/*a clase list 
+le damos margen para que se centre
+con pading ponemos distancia entre elemento y sus limites
+color de fondo
+ancho 
+y maximo de ancho */
+.list {
+    margin: 25px auto;
+    padding: 25px;
+    background-color: var(--light);
+    width: 100%;
+    max-width: 350px;
+}
+/*Lo hacemos flex
+los alineamos centrados 
+ponemos espacio entre ellos */
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*Lo hacemos flex y los alineamos centrados*/
+.dateLeft {
+    display: flex;
+    align-items: center;
+}
+
+/*Tamaño de fuente de date number*/
+#dateNumber {
+    font-size: 50px;
+}
+/*Ponemos espacio entre letras 
+ponemos todo en mayuscula*/
+#dateText {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+/*Al mes, number y text lo hacemos negrita*/
+#dateMonth,
+#dateNumber,
+#dateText  {
+    font-weight: bold;
+}
+/*POnemos margen y tamaño de fuente*/
+#dateMonth,
+#dateYear {
+    margin-left: 7px;
+    font-size: 20px;
+}
+/*Ponemos margen
+Al form lo hacemos grid, 
+se le pone automatico a los del medio
+al boton del medio se le da un tamaño de 35px
+con gap ponemos espacio entre todos*/
+form {
+    margin: 20px 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 35px auto;
+    grid-column-gap: 15px;
+}
+/*sacamos los fordes
+ponemos padding
+ponemos color de fondo*/
+input {
+    border: none;
+    padding-left: 10px;
+    background-color: var(--diabled);
+}
+/*sacamos el outline al marcarlo*/
+input:focus {
+    outline: none;
+}
+/*al boton de agregar y ordenar,
+le sacamos el borde
+lo hacemos negrita 
+con pointer aparecera un mano al pasar por encima*/
+.addTaskButton,
+.orderButton {
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*le damos un tamaño,
+un borde para que quede redondo
+cambiamos tamaño de la fuente 
+y cambiamos color de fondo*/
+.addTaskButton {
+    height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: var(--diabled);
+}
+/*Cambiamos color del boton y del fondo*/
+.orderButton {
+    background-color: var(--secondary);
+    color: var(--light);
+}
+/*Determinamos color de fondo
+ponemos pading
+margen
+color de texto
+y cursos con manito*/
+.task {
+    background-color: var(--primary);
+    padding: 15px;
+    margin-top: 15px;
+    color: var(--light);
+    cursor: pointer;
+}
+/*estilos para tareas hechas
+color de fondo
+la decoracion es para que tenga una linea que tacha el texto
+y color de texto*/
+.done {
+    background-color: var(--diabled);
+    text-decoration: line-through;
+    color: var(--dark);
+}

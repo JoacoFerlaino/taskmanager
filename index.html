@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task list</title>
+    <!-- Agregamos links de CSS, Font de letras y link a JS-->
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap" rel="stylesheet"> 
+    <script src="./index.js" type="text/javascript" defer></script>
+</head>
+<body>
+<!-- Agregamos los divs para luego dar formato con CSS-->
+
+    <div class="list roundBorder"> 
+        <div class="date">
+            <div class="dateLeft">
+                <div id="dateNumber"></div>
+                <div>
+                    <div id="dateMonth"></div>
+                    <div id="dateYear"></div>
+                </div>
+            </div>
+            <div id="dateText"></div>
+        </div>
+<!-- Agregamos el formulario que agegara la tarea y le diremos que cuando se envie
+llamara a la funcion "addNewTask" y pasara el evento que tiene la info del form para 
+ejecutar la funcion -->
+        <form onsubmit="addNewTask(event)">
+<!-- Agregamos el cuadrado para texto, placeholder es lo que se vera en gris para completar-->
+            <input type="text" name="taskText" autocomplete="off" placeholder="New Task" class="roundBorder">
+<!-- Agregamos el boton, con el tipo submite, osea el evento addnewtask se ejecutara cuando se
+aprete el boton-->
+            <button type="submit" class="addTaskButton">+</button>
+<!-- Agregamos Otro boton, este no ejecuta la funcion como el de arriba.
+sino que ejecuta otra funcion la de "renderOrderTasks", que usaremos para ordenar tareas -->
+            <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Order</button>
+        </form>
+<!-- En este Div iran las tareas que agregue el usuario-->
+        <div id="tasksContainer"></div>
+    </div>
+    
+</body>
+</html>
